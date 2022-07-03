@@ -3,7 +3,6 @@ Sanskrit Sandhi
 ===============
 
 
-
 .. image:: https://img.shields.io/pypi/v/sandhi
         :target: https://pypi.python.org/pypi/sandhi
 
@@ -41,7 +40,7 @@ Sanskrit Sandhi Module
 Features
 ========
 
-* TODO
+* Form Sandhi using Ashtadhyayi Rules
 
 Install
 =======
@@ -52,10 +51,27 @@ To install Sanskrit Sandhi, run this command in your terminal:
 
     $ pip install sandhi
 
+Usage
+=====
+
+To use Sanskrit Sandhi in a project,
+
+.. code-block:: python
+
+    import sandhi
+
+    S = sandhi.Sandhi()
+    sandhi = S.sandhi("रामः", "राजमणिः")
+
+    # print(sandhi)
+    # [['रामो राजमणिः', 'ससजुषो रुः (८।२।६६)-> हशि च (६।१।११४)-> आद् गुणः (६।१।८७)', 'रुत्व-> उत्व-> गुण-सन्धिः']]
+
 Credits
 =======
 
-This package was created with Cookiecutter_ and the `hrishikeshrt/cookiecutter-pypackage`_ project template.
+* This package was converted from Perl version obtainable from Samsaadhanii_
+* This package was created with Cookiecutter_ and the `hrishikeshrt/cookiecutter-pypackage`_ project template.
 
+.. _Samsaadhanii: https://github.com/samsaadhanii/scl
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`hrishikeshrt/cookiecutter-pypackage`: https://github.com/hrishikeshrt/cookiecutter-pypackage
