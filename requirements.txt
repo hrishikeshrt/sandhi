@@ -1,0 +1,1 @@
+indic_transliteration>=2.3.10
