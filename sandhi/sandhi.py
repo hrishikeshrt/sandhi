@@ -85,13 +85,13 @@ class Sandhi:
             srch_str2 = f"{lf2},{sf}"
 
             if DEBUG:
-                print(f"{srch_str1=}")
+                print(f"srch_str1={srch_str1}")
             if DEBUG:
-                print(f"{srch_str2=}")
+                print(f"srch_str2={srch_str2}")
 
             for rule in self.rules:
                 if DEBUG:
-                    print(f"{rule=}")
+                    print(f"rule={rule}")
 
                 m = re.search('^' + srch_str1 + ',([^,]+),', rule)
                 if m:
