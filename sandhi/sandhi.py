@@ -179,7 +179,3 @@ class Sandhi:
         return f'{self.__class__.__name__}({len(self.rules)} rules)'
 
 ###############################################################################
-
-
-if __name__ == '__main__':
-    pass
