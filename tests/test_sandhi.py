@@ -2,23 +2,15 @@
 
 """Tests for `sandhi` package."""
 
-import pytest
-
 
 from sandhi import sandhi
+from indic_transliteration.sanscript import DEVANAGARI
+
+S = sandhi.Sandhi()
 
 
-@pytest.fixture
-def response():
-    """Sample pytest fixture.
-
-    See more at: http://doc.pytest.org/en/latest/fixture.html
-    """
-    # import requests
-    # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
-
-
-def test_content(response):
+# Small test to check for proper handling of avagraha
+def test_avagraha():
     """Sample pytest test function with the pytest fixture as an argument."""
-    # from bs4 import BeautifulSoup
-    # assert 'GitHub' in BeautifulSoup(response.content).title.string
+    results = S.sandhi("ते", "अपि", DEVANAGARI)
+    assert results[0][0] == "तेऽपि"
