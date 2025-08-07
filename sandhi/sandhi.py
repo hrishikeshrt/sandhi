@@ -69,17 +69,17 @@ class Sandhi:
             print(f"ans from apavAda niyama = {ans}\n")
 
         if cont == 1:
-            m = re.search('^(.*)(.)$', first)
-            f_rem1 = m.group(1) if m else ''
-            lf1 = m.group(2) if m else ''
+            m = re.search("^(.*)(.)$", first)
+            f_rem1 = m.group(1) if m else ""
+            lf1 = m.group(2) if m else ""
 
-            m = re.search('^(.*)(..)$', first)
-            f_rem2 = m.group(1) if m else ''
-            lf2 = m.group(2) if m else ''
+            m = re.search("^(.*)(..)$", first)
+            f_rem2 = m.group(1) if m else ""
+            lf2 = m.group(2) if m else ""
 
-            m = re.search('^(.)(.*)$', second)
-            sf = m.group(1) if m else ''
-            s_rem = m.group(2) if m else ''
+            m = re.search("^(.)(.*)$", second)
+            sf = m.group(1) if m else ""
+            s_rem = m.group(2) if m else ""
 
             srch_str1 = f"{lf1},{sf}"
             srch_str2 = f"{lf2},{sf}"
@@ -93,13 +93,13 @@ class Sandhi:
                 if DEBUG:
                     print(f"rule={rule}")
 
-                m = re.search('^' + srch_str1 + ',([^,]+),', rule)
+                m = re.search("^" + srch_str1 + ",([^,]+),", rule)
                 if m:
                     sandhi = m.group(1)
-                    rule2 = rule.replace('"', '').split(',')
-                    Sakya_uwwaras = sandhi.split('/')
+                    rule2 = rule.replace('"', "").split(",")
+                    Sakya_uwwaras = sandhi.split("/")
                     for Sakya_uwwara in Sakya_uwwaras:
-                        Sakya_uwwara = Sakya_uwwara.replace(' ', '  ')
+                        Sakya_uwwara = Sakya_uwwara.replace(" ", "  ")
                         an = f"{f_rem1}{Sakya_uwwara}{s_rem}"
                         ans = f"{ans}:{an}"
                         an1 = rule2[3]  # + "-sanXiH"
@@ -107,13 +107,13 @@ class Sandhi:
                         an2 = rule2[4]
                         ans2 = f"{ans2}:{an2}"
                 else:
-                    m = re.search('^' + srch_str2 + ',([^,]+),', rule)
+                    m = re.search("^" + srch_str2 + ",([^,]+),", rule)
                     if m:
                         sandhi = m.group(1)
-                        rule2 = rule.replace('"', '').split(',')
-                        Sakya_uwwaras = sandhi.split('/')
+                        rule2 = rule.replace('"', "").split(",")
+                        Sakya_uwwaras = sandhi.split("/")
                         for Sakya_uwwara in Sakya_uwwaras:
-                            Sakya_uwwara = Sakya_uwwara.replace(' ', '  ')
+                            Sakya_uwwara = Sakya_uwwara.replace(" ", "  ")
                             an = f"{f_rem2}{Sakya_uwwara}{s_rem}"
                             ans = f"{ans}:{an}"
                             an1 = rule2[3]  # + "-sanXiH"
@@ -125,7 +125,7 @@ class Sandhi:
                 result = [ans, ans1, ans2]
                 # , pra, dvi, sam, sa, sut, pra1]
             else:
-                result = [f"{first}{second}", second, '']
+                result = [f"{first}{second}", second, ""]
                 # , pra, dvi, sam, sa, sut, pra1]
         else:
             ans = f":{ans}"
@@ -142,32 +142,32 @@ class Sandhi:
 
         answers = self._wx_sandhi(wx_w1, wx_w2)
 
-        formed_sandhis = answers[0].split(':')
-        sandhi_types = answers[1].split(':')
-        sutras = answers[2].split(':')
+        formed_sandhis = answers[0].split(":")
+        sandhi_types = answers[1].split(":")
+        sutras = answers[2].split(":")
 
         answers = []
 
         for idx, answer in enumerate(formed_sandhis):
-            answer = answer.replace('><', '__')
+            answer = answer.replace("><", "__").replace("Z", "'")
             answer = tl(answer, sanscript.WX, input_scheme)
-            answer = answer.replace('__', '><')
+            answer = answer.replace("__", "><")
 
             if len(sandhi_types) > idx:
                 sandhi_type = sandhi_types[idx]
-                sandhi_type = sandhi_type.replace('><', '__')
+                sandhi_type = sandhi_type.replace("><", "__").replace("Z", "'")
                 sandhi_type = tl(sandhi_type, sanscript.WX, input_scheme)
-                sandhi_type = sandhi_type.replace('__', '><')
+                sandhi_type = sandhi_type.replace("__", "><")
             else:
-                sandhi_type = ''
+                sandhi_type = ""
 
             if len(sutras) > idx:
                 sutra = sutras[idx]
-                sutra = sutra.replace('><', '__')
+                sutra = sutra.replace("><", "__").replace("Z", "'")
                 sutra = tl(sutra, sanscript.WX, input_scheme)
-                sutra = sutra.replace('__', '><')
+                sutra = sutra.replace("__", "><")
             else:
-                sutra = ''
+                sutra = ""
 
             # string non-empty
             if answer:
@@ -176,6 +176,7 @@ class Sandhi:
         return answers
 
     def __repr__(self):
-        return f'{self.__class__.__name__}({len(self.rules)} rules)'
+        return f"{self.__class__.__name__}({len(self.rules)} rules)"
+
 
 ###############################################################################
