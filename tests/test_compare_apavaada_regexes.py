@@ -1,9 +1,13 @@
 import re
 import ast
+import os
+from pathlib import Path
 from typing import List, Tuple
 
 
-def extract_python_regexes_ast(python_script_path: str) -> List[Tuple[int, str, str]]:
+def extract_python_regexes_ast(
+    python_script_path: str | Path,
+) -> List[Tuple[int, str, str]]:
     """
     Alternative implementation using AST parsing for more robust extraction.
     This version can handle more complex cases like multi-line statements and variables.
@@ -68,7 +72,7 @@ def extract_python_regexes_ast(python_script_path: str) -> List[Tuple[int, str, 
     return regexes
 
 
-def extract_perl_regexes(perl_script_path: str) -> List[Tuple[int, str, str]]:
+def extract_perl_regexes(perl_script_path: str | Path) -> List[Tuple[int, str, str]]:
     """
     Extract regex patterns from a Perl script, skipping commented lines.
 
@@ -131,13 +135,14 @@ def print_regexes(regexes: List[Tuple[int, str, str]], filename: str) -> None:
 
 
 def test_compare_regexes():
-    perl_script = "../perl/apavAxa_any.pl"
+    path = Path(os.path.dirname(__file__))
+    perl_script = path / ".." / "perl" / "apavAxa_any.pl"
     perl_regexes = extract_perl_regexes(perl_script)
     # print_regexes(perl_regexes, perl_script)
     _, _, r = zip(*perl_regexes)
     perl_set = set(r)
 
-    python_script = "../sandhi/apavaada.py"
+    python_script = path / ".." / "sandhi" / "apavaada.py"
     python_regexes = extract_python_regexes_ast(python_script)
     _, _, r = zip(*python_regexes)
     python_set = set(r)

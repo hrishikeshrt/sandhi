@@ -1,8 +1,10 @@
 import re
+import os
+from pathlib import Path
 from typing import List
 
 
-def extract_perl_rules_array(perl_script_path: str) -> List[str]:
+def extract_perl_rules_array(perl_script_path: str | Path) -> List[str]:
     """
     Extract the @rules array from a Perl script, skipping commented lines.
 
@@ -23,7 +25,6 @@ def extract_perl_rules_array(perl_script_path: str) -> List[str]:
         if stripped_line and not stripped_line.startswith("#"):
             clean_lines.append(line.rstrip())
 
-    # Join all non-commented lines into a single string
     content = "\n".join(clean_lines)
 
     # Extract the @rules array using regex
@@ -39,8 +40,6 @@ def extract_perl_rules_array(perl_script_path: str) -> List[str]:
         return []  # Array not found
 
     # Parse the array elements
-    # entries = parse_perl_array_elements(array_content)
-    # return entries
     entries = array_content.strip().split("\n")
     rules = []
     pattern = re.compile(r'"(.*)",')
@@ -60,13 +59,16 @@ def extract_perl_rules_array(perl_script_path: str) -> List[str]:
 
 
 def test_rules():
-    perl_script = "../perl/any_sandhi.pl"
+    path = Path(os.path.dirname(__file__))
+    perl_script = path / ".." / "perl" / "any_sandhi.pl"
     perl_rules = extract_perl_rules_array(perl_script)
     from sandhi.niyama import RULES as python_rules
 
     assert perl_rules == python_rules
 
     # from pprint import pprint
+    # perl_rules = set(perl_rules)
+    # python_rules = set(python_rules)
     # pprint(f"{perl_rules - python_rules=}")
     # pprint(f"{python_rules - perl_rules=}")
     # return perl_rules, python_rules
