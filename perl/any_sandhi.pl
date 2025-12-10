@@ -2,7 +2,7 @@
 
 #  Copyright (C) 2002-2012 Pankaj Vyas
 #  Copyright (C) 2002-2012 Sivaja Nair
-#  Copyright (C) 2002-2021 Amba Kulkarni (ambapradeep@gmail.com)
+#  Copyright (C) 2002-2025 Amba Kulkarni (ambapradeep@gmail.com)
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -1725,16 +1725,11 @@
 #"n,E,nE,diPAlt,,,", #Commented by Amba
 #"n,o,no,diPAlt,,,", #Commented by Amba
 #"n,O,nO,diPAlt,,,", #Commented by Amba
-#"n,k,nk,dePAlt,,,",#Commented by Amba
-#"n,K,nK,dePAlt,,,",#Commented by Amba
-#"n,g,ng,dePAlt,,,",#Commented by Amba
-#"n,G,nG,dePAlt,,,",#Commented by Amba
-#"n,f,nf,dePAlt,,,",#Commented by Amba
-"n,k,fk,dePAlt,,,", #Added by Amba
-"n,K,fK,dePAlt,,,", #Added by Amba
-"n,g,fg,dePAlt,,,", #Added by Amba
-"n,G,fG,dePAlt,,,", #Added by Amba
-"n,f,f,dePAlt,,,", #Added by Amba
+#"n,k,nk,dePAlt,,,",#Commented by Amba  n at the end of a pada does not undergo any change. Kale page 25, $36 a
+#"n,K,nK,dePAlt,,,",#Commented by Amba  n at the end of a pada does not undergo any change. Kale page 25, $36 a
+#"n,g,ng,dePAlt,,,",#Commented by Amba  n at the end of a pada does not undergo any change. Kale page 25, $36 a
+#"n,G,nG,dePAlt,,,",#Commented by Amba  n at the end of a pada does not undergo any change. Kale page 25, $36 a
+#"n,f,nf,dePAlt,,,",#Commented by Amba  n at the end of a pada does not undergo any change. Kale page 25, $36 a
 "n,c,Fc,dePAlt,,,",
 "n,C,FC,dePAlt,,,",
 "n,j,Fj,Scuwva,swoH ScunA ScuH (8.4.40),",
@@ -2616,7 +2611,7 @@
 "eH,R,eH R,visarga,vA Sari (8.3.36),",
 "eH,s,ess,sawva,visarjanIyasya saH (8.3.34),",
 "eH,s,eH s,visarga,vA Sari (8.3.36),",
-"oH,r,orr,rePaH,sasajuRo ruH (8.2.66),",
+"oH,r,or,rePalopa,sasajuRo ruH (8.2.66)-> ro ri (8.3.14)",
 "oH,S,oSS,sawva -> Scuwva,visarjanIyasya saH (8.3.34)-> swoH ScunA ScuH (8.4.40),",
 "oH,S,oH S,visarga,vA Sari (8.3.36),",
 "oH,R,oRR,sawva -> Rtuwva,visarjanIyasya saH (8.3.34)-> RtunA RtuH (8.4.41),",

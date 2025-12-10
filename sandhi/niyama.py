@@ -5,7 +5,8 @@
 
 Perl Source:
     Samsaadhanii Git (sandhi/any_sandhi.pl)
-    (Commit: 4c9331a53059d3153f97e46e949decc755749180)
+    (Commit: 30e5216a90e2bd0e80bf1e8ae4cdc97c08b00604) from
+    https://github.com/samsaadhanii/scl/pull/5
 """
 
 ###############################################################################
@@ -1737,28 +1738,23 @@ RULES = [
     # "n,E,nE,varNamelana,,,", # Commented by Amba
     # "n,o,no,varNamelana,,,", # Commented by Amba
     # "n,O,nO,varNamelana,,,", # Commented by Amba
-    # "n,k,nk,varNamelana,,,", # Commented by Amba
-    # "n,K,nK,varNamelana,,,", # Commented by Amba
-    # "n,g,ng,varNamelana,,,", # Commented by Amba
-    # "n,G,nG,varNamelana,,,", # Commented by Amba
-    # "n,f,nf,varNamelana,,,", # Commented by Amba
-    "n,k,fk,varNamelana,,,",  # Added by Amba
-    "n,K,fK,varNamelana,,,",  # Added by Amba
-    "n,g,fg,varNamelana,,,",  # Added by Amba
-    "n,G,fG,varNamelana,,,",  # Added by Amba
-    "n,f,f,varNamelana,,,",   # Added by Amba
+    # "n,k,nk,varNamelana,,,", # Commented by Amba   n at the end of a pada does not undergo any change. Kale page 25, $36 a
+    # "n,K,nK,varNamelana,,,", # Commented by Amba   n at the end of a pada does not undergo any change. Kale page 25, $36 a
+    # "n,g,ng,varNamelana,,,", # Commented by Amba   n at the end of a pada does not undergo any change. Kale page 25, $36 a
+    # "n,G,nG,varNamelana,,,", # Commented by Amba   n at the end of a pada does not undergo any change. Kale page 25, $36 a
+    # "n,f,nf,varNamelana,,,", # Commented by Amba   n at the end of a pada does not undergo any change. Kale page 25, $36 a
     "n,c,Fc,varNamelana,,,",
     "n,C,FC,varNamelana,,,",
     "n,j,Fj,Scuwva,swoH ScunA ScuH (8.4.40),",
-    "n,J,FJ,varNamelana,,,",   # Commented by Amba
+    "n,J,FJ,varNamelana,,,",  # Commented by Amba
     # "n,F,nF,varNamelana,,,", # Commented by Amba
-    "n,F,F,varNamelana,,,",    # Added by Amba
+    "n,F,F,varNamelana,,,",  # Added by Amba
     # "n,t,nt,varNamelana,,,", # Commented by Amba
     # "n,T,nT,varNamelana,,,", # Commented by Amba
     # "n,d,nd,varNamelana,,,", # Commented by Amba
-    "n,t,Nt,varNamelana,,,",   # Added by Amba
-    "n,T,NT,varNamelana,,,",   # Added by Amba
-    "n,d,Nd,varNamelana,,,",   # Added by Amba
+    "n,t,Nt,varNamelana,,,",  # Added by Amba
+    "n,T,NT,varNamelana,,,",  # Added by Amba
+    "n,d,Nd,varNamelana,,,",  # Added by Amba
     "n,D,ND,Rtuwva,RtunA RtuH (8.4.41),",
     # "n,N,nN,varNamelana,,,", # Commented by Amba
     # "n,w,nw,varNamelana,,,", # Commented by Amba
@@ -2628,7 +2624,7 @@ RULES = [
     "eH,R,eH R,visarga,vA Sari (8.3.36),",
     "eH,s,ess,sawva,visarjanIyasya saH (8.3.34),",
     "eH,s,eH s,visarga,vA Sari (8.3.36),",
-    "oH,r,orr,rePaH,sasajuRo ruH (8.2.66),",
+    "oH,r,or,rePalopa,sasajuRo ruH (8.2.66)-> ro ri (8.3.14)",
     "oH,S,oSS,sawva -> Scuwva,visarjanIyasya saH (8.3.34)-> swoH ScunA ScuH (8.4.40),",
     "oH,S,oH S,visarga,vA Sari (8.3.36),",
     "oH,R,oRR,sawva -> Rtuwva,visarjanIyasya saH (8.3.34)-> RtunA RtuH (8.4.41),",
