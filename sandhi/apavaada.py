@@ -738,7 +738,7 @@ def apavAdaniyamAH(an):
         cont = 0
 
     if match := re.search(r"(.*[iu])H\+([kKpP])(.*)", an):
-        ans = f"{match.group(1)}iR{match.group(2)}{match.group(3)}:{match.group(1)}i><{match.group(2)}{match.group(3)}:{match.group(1)}iH {match.group(2)}{match.group(3)}"
+        ans = f"{match.group(1)}R{match.group(2)}{match.group(3)}:{match.group(1)}><{match.group(2)}{match.group(3)}:{match.group(1)}H {match.group(2)}{match.group(3)}"
         ans1 = "sAmarWye Rawvam:RawvABAve jihvAmUlIya:RawvABAve visarga"
         ans2 = "isusoH sAmarWye (8.3.44):kupvo><ka ><pO ca (8.3.37):kupvo><ka ><pO ca (8.3.37)"
         cont = 0
